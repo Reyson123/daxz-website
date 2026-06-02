@@ -1,1 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>DAZX STUDIOS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#050505;
+--card:#101010;
+--accent:#00a8ff;
+--text:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+.light{
+--bg:#f5f5f5;
+--card:#ffffff;
+--text:#111111;
+}
+
+#bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+#cursor{
+position:fixed;
+width:220px;
+height:220px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(0,168,255,.25),
+transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+nav h2{
+color:var(--accent);
+}
+
+.theme{
+background:var(--accent);
+border:none;
+padding:10px 15px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.logo{
+width:min(350px,80vw);
+filter:
+drop-shadow(0 0 30px #00a8ff);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,6rem);
+margin-top:20px;
+}
+
+.hero p{
+margin-top:15px;
+opacity:.85;
+max-width:700px;
+}
+
+.btns{
+margin-top:30px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:14px 28px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:2.5rem;
+margin-bottom:40px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 25px rgba(0,168,255,.2);
+}
+
+.card h3{
+margin-bottom:15px;
+color:var(--accent);
+}
+
+.roadmap{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:800px;
+margin:auto;
+}
+
+.step{
+background:var(--card);
+padding:25px;
+border-radius:15px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+opacity:.7;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div id="cursor"></div>
+
+<nav>
+<h2>DAZX STUDIOS</h2>
+<button class="theme" onclick="toggleTheme()">
+🌙
+</button>
+</nav>
+
+<section class="hero">
+
+<img src="logo.png" class="logo">
+
+<h1>DAZX STUDIOS</h1>
+
+<p>
+Technology • Gaming • Innovation
+<br><br>
+Creando el futuro desde cero.
+</p>
+
+<div class="btns">
+
+<a href="https://www.tiktok.com/@daxz.studios"
+class="btn">
+TikTok
+</a>
+
+<a href="https://github.com/Reyson123"
+class="btn">
+GitHub
+</a>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="section-title">
+Sobre Nosotros
+</h2>
+
+<div class="card">
+
+<p>
+
+DAZX STUDIOS es una iniciativa tecnológica fundada por
+Reyson Emilio Tejeda Delgado (DAXZ).
+
+Nuestro objetivo es crear proyectos tecnológicos,
+digitales y creativos que inspiren a las nuevas
+generaciones a innovar y construir el futuro.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="section-title">
+Divisiones
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 DAZX TECH</h3>
+<p>
+Desarrollo web, software,
+inteligencia artificial
+y proyectos tecnológicos.
+</p>
+</div>
+
+<div class="card">
+<h3>🎮 DAZX GAMING</h3>
+<p>
+Gaming, esports,
+creación de contenido
+y comunidades digitales.
+</p>
+</div>
+
+<div class="card">
+<h3>🎬 DAZX MEDIA</h3>
+<p>
+Diseño, branding,
+contenido y marketing digital.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="section-title">
+Roadmap
+</h2>
+
+<div class="roadmap">
+
+<div class="step">
+<h3>2026</h3>
+<p>
+✓ Lanzamiento de la marca<br>
+✓ Creación de comunidad<br>
+✓ Página web oficial
+</p>
+</div>
+
+<div class="step">
+<h3>2027</h3>
+<p>
+□ Primer producto<br>
+□ Expansión de proyectos
+</p>
+</div>
+
+<div class="step">
+<h3>2028+</h3>
+<p>
+□ Escalamiento tecnológico<br>
+□ Nuevas divisiones
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 DAZX STUDIOS
+
+<br><br>
+
+Technology • Gaming • Innovation
+
+</footer>
+
+<script>
+
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+
+document.addEventListener("mousemove",e=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+});
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+function reveal(){
+
+revealElements.forEach(el=>{
+
+const top =
+el.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+
+el.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+reveal();
+
+const canvas =
+document.getElementById("bg");
+
+const ctx =
+canvas.getContext("2d");
+
+function resize(){
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+"resize",
+resize
+);
+
+let stars=[];
+
+for(let i=0;i<150;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*2
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.fillStyle="#00a8ff";
+
+stars.forEach(star=>{
+
+ctx.beginPath();
+
+ctx.arc(
+star.x,
+star.y,
+star.r,
+0,
+Math.PI*2
+);
+
+ctx.fill();
+
+star.y+=0.3;
+
+if(star.y>canvas.height){
+
+star.y=0;
+
+}
+
+});
+
+requestAnimationFrame(
+animate
+);
+
+}
+
+animate();
+
+</script>
+
+</body>
+  </html>
