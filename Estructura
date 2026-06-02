@@ -1,0 +1,15 @@
+daxz-website/
+│
+├── index.html
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── main.js
+│
+├── assets/
+│   ├── logo.png
+│   ├── favicon.png
+│   └── images/
+│
+└── README.md
